@@ -1,6 +1,8 @@
 package dictionary;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import analysor.Parser;
 
@@ -14,10 +16,10 @@ public class Verificator {
 			// fin
 		// sinon appel parser sur ce fichier (CREATION)
 		// fin
-	public static void checkPageExistence(File file){
+	public static void checkPageExistence(File file) throws FileNotFoundException, IOException{
 		if(Dictionary.getContent().isEmpty()) {
 			System.out.println("Empty Dictionary");
-			Dictionary.FillDictionary(Parser.monPetitParseur(file));
+			Dictionary.FillDictionary(Parser.startOpFileParsing(file));
 		}
 		else 
 		{
@@ -26,7 +28,7 @@ public class Verificator {
 					System.out.println("File exists!");
 					if (currentPage.getLastModif() != file.lastModified()) {
 						System.out.println("Was modified!");
-						Parser.monPetitParseur(file); // MAJ
+						Dictionary.FillDictionary(Parser.startOpFileParsing(file));
 					}
 					else {
 						System.out.println("Not modified!");
@@ -34,10 +36,12 @@ public class Verificator {
 						
 				}
 				else {
-					System.out.println("New file detected!");
-					Parser.monPetitParseur(file); // Creation
+					System.out.println("New file detected: "+file.getName());
+					Dictionary.FillDictionary(Parser.startOpFileParsing(file));
+					System.out.println(Dictionary.getContent().toString());
 				}
 			}
 		}
+		
 	}
 }

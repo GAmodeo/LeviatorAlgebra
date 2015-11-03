@@ -9,6 +9,11 @@ public class Page {
 //			- id de version du fichier = date de modif du fichier
 //			- Objet Java Algebre
 			
+	@Override
+	public String toString() {
+		return "Page [symbol=" + symbol + ", filename=" + filename
+				+ ", lastModif=" + lastModif + ", operator=" + operator + "]";
+	}
 	private String symbol;
 	private String filename;
 	private long lastModif;
