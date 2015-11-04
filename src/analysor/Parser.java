@@ -21,7 +21,7 @@ public class Parser {
 	private static ArrayList<String> distributivity = new ArrayList<>();
 	private static ArrayList<String> neutralValue = new ArrayList<>();
 	private static ArrayList<String> absorbValue = new ArrayList<>();
-	private static ArrayList<String> forbibValue = new ArrayList<>();
+	private static HashMap<String, String> forbibValue = new HashMap<>();
 	private static HashMap<String, String> entries = new HashMap<>();
 	private static int numberOfEntries;
 	private static Operator operator;
@@ -87,7 +87,8 @@ public class Parser {
 			numberOfEntries = entries.size();
 			break;
 		case "FORBIDVAL":
-			fillArrayList(forbibValue, getCharTillEndOfLine(line, i));
+			System.out.println("FORBID");
+			fillHashMap(forbibValue, getCharTillEndOfLine(line, i));
 			break;
 		default:
 			break;
@@ -125,6 +126,7 @@ public class Parser {
 		boolean first = true;
 		
 		while(i < content.length()){
+			System.out.println(content.charAt(i)+"content size : "+ content.length()+ " i : "+i);
 			if(content.charAt(i) == '<')
 				++i;
 			while(content.charAt(i) != '>'){

@@ -8,6 +8,6 @@ NEUTRALVAL:<2>
 ABSORBVAL:<>
 RETURNTYPE:boolean
 NUMENTRY:<$A,boolean>
-FORBIDVAL:<0>
+FORBIDVAL:<$A,0><$B,0>
 RULE:$A SYM $B = $A + $B
 RULE:$A INV $B = $A - $B
