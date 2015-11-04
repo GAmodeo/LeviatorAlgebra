@@ -2,7 +2,8 @@ package dictionary;
 
 import java.util.ArrayList;
 
-import main.Operator;
+import algebra.Operator;
+
 
 public class Dictionary {
 	private static ArrayList<Page> content = new ArrayList<Page>();

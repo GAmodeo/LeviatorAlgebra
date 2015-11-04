@@ -8,7 +8,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import main.Operator;
+import algebra.Operator;
+
 import dictionary.Page;
 
 public class Parser {

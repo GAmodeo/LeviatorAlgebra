@@ -1,6 +1,6 @@
 package dictionary;
 
-import main.Operator;
+import algebra.Operator;
 
 public class Page {
 //	Dico = Objet Java
