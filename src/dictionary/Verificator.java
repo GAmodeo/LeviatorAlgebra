@@ -16,32 +16,48 @@ public class Verificator {
 			// fin
 		// sinon appel parser sur ce fichier (CREATION)
 		// fin
-	public static void checkPageExistence(File file) throws FileNotFoundException, IOException{
+	public static void validPages(File file) throws FileNotFoundException, IOException{
+		int checkResult = checkPageExistence(file);
+		switch (checkResult) {
+		case 0:
+			Dictionary.FillDictionary(Parser.startOpFileParsing(file));
+			break;
+		case 1:
+			System.out.println("Not modification detected for file: "+ file.getName());
+		case 2:
+			System.out.println("Call on modify method");
+			break;
+		default:
+			System.err.println("Error while checking pages!");
+			break;
+		}
+		System.out.println(Dictionary.getContent().toString());
+	}
+	
+	public static int checkPageExistence(File file)throws FileNotFoundException, IOException{
 		if(Dictionary.getContent().isEmpty()) {
 			System.out.println("Empty Dictionary");
-			Dictionary.FillDictionary(Parser.startOpFileParsing(file));
 		}
-		else 
-		{
+		else{
 			for (Page currentPage : Dictionary.getContent()) {
 				if (currentPage.getFilename() == file.getName()) {
 					System.out.println("File exists!");
 					if (currentPage.getLastModif() != file.lastModified()) {
 						System.out.println("Was modified!");
-						Dictionary.FillDictionary(Parser.startOpFileParsing(file));
+						return 2;
 					}
 					else {
 						System.out.println("Not modified!");
+						return 1;
 					}
 						
 				}
 				else {
 					System.out.println("New file detected: "+file.getName());
-					Dictionary.FillDictionary(Parser.startOpFileParsing(file));
-					System.out.println(Dictionary.getContent().toString());
+					return 0;
 				}
 			}
 		}
-		
+		return 0;
 	}
 }

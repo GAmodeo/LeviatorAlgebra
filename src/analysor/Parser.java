@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import main.Operator;
-
 import dictionary.Page;
 
 public class Parser {
