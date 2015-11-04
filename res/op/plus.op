@@ -3,7 +3,7 @@ LOGO:icoplus.jpg
 ~votre ligne commentaire ici
 COMM:True
 ASSO:true
-DISTRI:</,lol,*,pablo>
+DISTRI:<>
 NEUTRALVAL:<0>
 ABSORBVAL:<>
 RETURNTYPE:numeric

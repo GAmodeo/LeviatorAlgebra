@@ -1,6 +1,5 @@
 package algebra;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ExpressionOperator implements Expression{
@@ -18,7 +17,7 @@ public class ExpressionOperator implements Expression{
 	 *aux children et retoune le resultat
 	 */
 	public int calculateValue() {
-		return this.operator.applyOperator(this.children);
+		return 0;//this.operator.applyOperator(this.children);
 	}
 
 	public Operator getOperator() {

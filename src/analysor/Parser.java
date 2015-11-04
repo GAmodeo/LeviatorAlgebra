@@ -34,9 +34,10 @@ public class Parser {
 		    	identifyLine(line);
 		    }
 		}
-		operator = new Operator(symbol, commutativity, associativity, distributivity);
+		operator = new Operator(symbol,commutativity,associativity,
+								distributivity,neutralValue,absorbValue,
+								returnType,entries,forbibValue);
 		return new Page(symbol,file.getName(),file.lastModified(),operator);
-		
 	}
 	
 	private static void identifyLine(String str){
