@@ -26,6 +26,8 @@ public class Verificator {
 			System.out.println("Not modification detected for file: "+ file.getName());
 		case 2:
 			System.out.println("Call on modify method");
+			Dictionary.updateDictionnary(Dictionary.getPageByFilename(file.getName()),
+					                     Parser.startOpFileParsing(file));
 			break;
 		default:
 			System.err.println("Error while checking pages!");
@@ -34,7 +36,7 @@ public class Verificator {
 		System.out.println(Dictionary.getContent().toString());
 	}
 	
-	public static int checkPageExistence(File file)throws FileNotFoundException, IOException{
+	private static int checkPageExistence(File file)throws FileNotFoundException, IOException{
 		if(Dictionary.getContent().isEmpty()) {
 			System.out.println("Empty Dictionary");
 		}

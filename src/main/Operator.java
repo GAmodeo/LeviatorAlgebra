@@ -16,18 +16,6 @@ public class Operator{
 //		rules = new Vector<Rule>();
 //	}
 	
-	/**
-	 * Consturcteur d'Operator
-	 * 
-	 * @param symbol
-	 * @param commutativite
-	 * @param associativite
-	 * @param distributivite
-	 * @param disjonction
-	 * @param elementNeutre
-	 * @param rules
-	 * @param zoneEffect
-	 */
 	public Operator (String symbol, boolean commutativite, boolean associativite, ArrayList<String> distributivite) {
 		this.symbol = symbol;
 		this.commutativite = commutativite;
