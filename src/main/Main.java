@@ -14,8 +14,12 @@ public class Main {
 		//Liste les fichiers
 		File f = new File("res/op/plus.op");
 		File f2 = new File("res/op/plus2.op");
+		File f3 = new File("res/img/plus2.op");
+		
 		try {
 			Verificator.validPages(f);
+			Verificator.validPages(f2);
+			f2 = f3;
 			Verificator.validPages(f2);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

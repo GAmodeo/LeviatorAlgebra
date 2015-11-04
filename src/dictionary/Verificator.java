@@ -41,25 +41,26 @@ public class Verificator {
 			System.out.println("Empty Dictionary");
 		}
 		else{
-			for (Page currentPage : Dictionary.getContent()) {
-				if (currentPage.getFilename() == file.getName()) {
-					System.out.println("File exists!");
-					if (currentPage.getLastModif() != file.lastModified()) {
-						System.out.println("Was modified!");
-						return 2;
-					}
-					else {
-						System.out.println("Not modified!");
-						return 1;
-					}
-						
+			Page page = Dictionary.getPageByFilename(file.getName());
+			if (page == null) {
+				System.out.println("New file detected: "+file.getName());
+				return 0;
+			}
+			else {
+				System.out.println("File exists!");
+				if (page.getLastModif() != file.lastModified()) {
+					System.out.println("Was modified!");
+					return 2;
 				}
 				else {
-					System.out.println("New file detected: "+file.getName());
-					return 0;
+					System.out.println("Not modified!");
+					return 1;
 				}
+					
 			}
-		}
+				
+					
+			}
 		return 0;
 	}
 }

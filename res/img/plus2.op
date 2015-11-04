@@ -1,0 +1,13 @@
+SYMBOL:*-*
+LOGO:wow.jpg
+~votre ligne commentaire ici
+COMM:True
+ASSO:false
+DISTRI:<>
+NEUTRALVAL:<2>
+ABSORBVAL:<>
+RETURNTYPE:boolean
+NUMENTRY:<$A,boolean>
+FORBIDVAL:<0>
+RULE:$A SYM $B = $A + $B
+RULE:$A INV $B = $A - $B
