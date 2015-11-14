@@ -3,6 +3,7 @@ LOGO:icoplus2.jpg
 ~votre ligne commentaire ici
 COMM:True
 ASSO:true
+PRIO:15
 DISTRI:<>
 NEUTRALVAL:<0,1,2>
 ABSORBVAL:<2>

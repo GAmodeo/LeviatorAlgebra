@@ -23,7 +23,8 @@ public class Verificator {
 			Dictionary.FillDictionary(Parser.startOpFileParsing(file));
 			break;
 		case 1:
-			System.out.println("Not modification detected for file: "+ file.getName());
+			System.out.println("No modification detected for file: "+ file.getName());
+			break;
 		case 2:
 			System.out.println("Call on modify method");
 			Dictionary.updateDictionnary(Dictionary.getPageByFilename(file.getName()),

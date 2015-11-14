@@ -19,6 +19,7 @@ public class Parser {
 	private static Boolean commutativity;
 	private static Boolean associativity;
 	private static String returnType;
+	private static float priority;
 	private static ArrayList<String> distributivity = new ArrayList<>();
 	private static ArrayList<String> neutralValue = new ArrayList<>();
 	private static ArrayList<String> absorbValue = new ArrayList<>();
@@ -34,7 +35,7 @@ public class Parser {
 		    	identifyLine(line);
 		    }
 		}
-		operator = new Operator(symbol,commutativity,associativity,
+		operator = new Operator(symbol,commutativity,associativity,priority,
 								distributivity,neutralValue,absorbValue,
 								returnType,entries,forbibValue);
 		return new Page(symbol,file.getName(),file.lastModified(),operator);
@@ -72,6 +73,10 @@ public class Parser {
 		case "ASSO":
 			associativity = new Boolean(getCharTillEndOfLine(line, i));
 			break;
+		case "PRIO":
+			priority = getFloatTillEndOfLine(line, i);
+			System.out.println(priority);
+			break;
 		case "DISTRI":
 			fillArrayList(distributivity, getCharTillEndOfLine(line, i));
 			break;
@@ -89,7 +94,6 @@ public class Parser {
 			numberOfEntries = entries.size();
 			break;
 		case "FORBIDVAL":
-			System.out.println("FORBID");
 			fillHashMap(forbibValue, getCharTillEndOfLine(line, i));
 			break;
 		default:
@@ -103,8 +107,16 @@ public class Parser {
 			res += s.charAt(n);
 			++n;
 		}
-//		System.out.println(res);
 		return res;
+	}
+	
+	private static float getFloatTillEndOfLine(String s,int n){
+		String res = "";
+		while(n < s.length()){
+			res += s.charAt(n);
+			++n;
+		}
+		return Float.valueOf(res);
 	}
 	
 	private static void fillArrayList(ArrayList<String> list, String content){
@@ -128,7 +140,6 @@ public class Parser {
 		boolean first = true;
 		
 		while(i < content.length()){
-			System.out.println(content.charAt(i)+"content size : "+ content.length()+ " i : "+i);
 			if(content.charAt(i) == '<')
 				++i;
 			while(content.charAt(i) != '>'){

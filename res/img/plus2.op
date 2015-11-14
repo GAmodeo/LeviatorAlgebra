@@ -1,8 +1,9 @@
-SYMBOL:*-*
+SYMBOL:*-**
 LOGO:wow.jpg
 ~votre ligne commentaire ici
 COMM:True
 ASSO:false
+PRIO:15
 DISTRI:<>
 NEUTRALVAL:<2>
 ABSORBVAL:<>
