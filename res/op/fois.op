@@ -1,0 +1,14 @@
+SYMBOL:*
+LOGO:icofois.jpg
+~votre ligne commentaire ici
+COMM:true
+ASSO:true
+~PRIO:2
+DISTRI:<+,->
+NEUTRALVAL:<1>
+ABSORBVAL:<0>
+RETURNTYPE:numeric
+NUMENTRY:<$A,numeric><$B,numeric>
+FORBIDVAL:<>
+RULE:($A SYM $B) = ($A * $B)
+~RULE:($A INV $B) = ($A / $B)

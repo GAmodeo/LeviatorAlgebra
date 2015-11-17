@@ -96,6 +96,9 @@ public class Parser {
 		case "FORBIDVAL":
 			fillHashMap(forbibValue, getCharTillEndOfLine(line, i));
 			break;
+		case "RULE":
+//			String content = getCharTillEndOfLine(line, i);
+			break;
 		default:
 			break;
 		}

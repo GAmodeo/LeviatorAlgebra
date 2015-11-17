@@ -1,0 +1,14 @@
+SYMBOL:or
+LOGO:icoor.jpg
+~votre ligne commentaire ici
+COMM:true
+ASSO:true
+~PRIO:2
+DISTRI:<and>
+NEUTRALVAL:<>
+ABSORBVAL:<1>
+RETURNTYPE:boolean
+NUMENTRY:<$A,boolean><$B,boolean>
+FORBIDVAL:<>
+RULE:($A SYM $B) = ($A || $B)
+~RULE:($A INV $B) = ($A && $B)

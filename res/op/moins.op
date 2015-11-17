@@ -1,14 +1,14 @@
-SYMBOL:+
-LOGO:icoplus.jpg
+SYMBOL:-
+LOGO:icomoins.jpg
 ~votre ligne commentaire ici
-COMM:True
+COMM:false
 ASSO:true
-PRIO:3
+~PRIO:3
 DISTRI:<>
 NEUTRALVAL:<0>
 ABSORBVAL:<>
 RETURNTYPE:numeric
 NUMENTRY:<$A,numeric><$B,numeric>
 FORBIDVAL:<>
-RULE:($A SYM $B) = ($A + $B)
-~RULE:($A INV $B) = ($A - $B)
+RULE:($A SYM $B) = ($A - $B)
+~RULE:($A INV $B) = ($A + $B)

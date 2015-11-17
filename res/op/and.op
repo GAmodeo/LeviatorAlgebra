@@ -1,0 +1,14 @@
+SYMBOL:and
+LOGO:icoand.jpg
+~votre ligne commentaire ici
+COMM:true
+ASSO:true
+~PRIO:2
+DISTRI:<or>
+NEUTRALVAL:<>
+ABSORBVAL:<0>
+RETURNTYPE:boolean
+NUMENTRY:<$A,boolean><$B,boolean>
+FORBIDVAL:<>
+RULE:($A SYM $B) = ($A && $B)
+~RULE:($A INV $B) = ($A || $B)

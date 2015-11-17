@@ -1,8 +1,13 @@
 package algebra;
 
+
 public class Rule {
 	
-	private Expression left;
-	private Expression right;
+	private int number;
+	private String xmlPath;
+	
+	public Rule (String _path){
+		
+	}
 	
 }
