@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Variable implements Expression{
 
-	private boolean unknown;
+	private boolean isUnknown;
 	private char name;
-	private boolean shadowed;
+
 	private int value;
 	
 	/*
@@ -14,18 +14,27 @@ public class Variable implements Expression{
 	 * qui n'ont pas de descendants
 	 */
 	
-	public Variable(boolean unknown,char name,boolean shadowed,int value) {
+	public Variable(boolean unknown,char name,int value) {
 		this.name=name;
-		this.unknown=unknown;
-		this.shadowed=shadowed;
+		this.isUnknown=unknown;
 		this.value=value;
 	}
-	public Variable(boolean shadowed,int value){
-		this.shadowed=shadowed;
-		this.value=value;
-	}
+
 	public int calculateValue(){
 		return this.value;
 	}
-	
+	public String show(){
+		
+		return Integer.toString(this.value);
+	}
+	@Override
+	public String getType() {
+		return "variable";
+	}
+
+	@Override
+	public List<Expression> getChildren() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

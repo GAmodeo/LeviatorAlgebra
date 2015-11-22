@@ -27,5 +27,20 @@ public class ExpressionOperator implements Expression{
 	public void setOperator(Operator operator) {
 		this.operator = operator;
 	}
+	public String show(){
+		
+		return "("+this.children.get(0).show()+this.getOperator().getSymbol()+this.children.get(1).show()+")";
+	}
+
+	@Override
+	public String getType() {
+		if (this.operator==null)
+		return "expressionoperator";
+		return "expressionoperator"+this.operator.getSymbol();
+	}
+	public List<Expression> getChildren()
+	{
+		return this.children;
+	}
 	
 }

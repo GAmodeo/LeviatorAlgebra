@@ -30,6 +30,10 @@ public interface  Expression {
 	 *  devra calculer le rendu en fonction des fils
 	 *  mais une variable ne fera que retourner sa valeur !
 	 */
+	public String getType();
+	
 	public abstract int calculateValue();
+	public abstract String show();
+	public abstract List<Expression> getChildren();
 	
 }
