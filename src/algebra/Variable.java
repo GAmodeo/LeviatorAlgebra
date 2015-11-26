@@ -4,7 +4,6 @@ import java.util.List;
 
 public class Variable implements Expression{
 
-	private boolean isUnknown;
 	private char name;
 
 	private int value;
@@ -14,9 +13,8 @@ public class Variable implements Expression{
 	 * qui n'ont pas de descendants
 	 */
 	
-	public Variable(boolean unknown,char name,int value) {
+	public Variable(char name,int value) {
 		this.name=name;
-		this.isUnknown=unknown;
 		this.value=value;
 	}
 
@@ -36,5 +34,22 @@ public class Variable implements Expression{
 	public List<Expression> getChildren() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public char getName() {
+		// TODO Auto-generated method stub
+		return this.name;
+	}
+
+	@Override
+	public void setChildren(List<Expression> Children) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Expression copy() {
+		return new Variable(this.name,this.value);
 	}
 }

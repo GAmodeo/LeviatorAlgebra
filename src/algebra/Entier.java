@@ -28,5 +28,20 @@ public class Entier implements Expression {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public char getName() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+
+	public void setChildren(List<Expression> Children) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public Expression copy() {
+		return new Entier(this.value);
+	}
 
 }

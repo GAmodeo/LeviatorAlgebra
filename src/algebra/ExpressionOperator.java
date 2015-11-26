@@ -1,6 +1,6 @@
 package algebra;
 
-import java.util.List;
+import java.util.*;
 
 public class ExpressionOperator implements Expression{
 
@@ -29,7 +29,8 @@ public class ExpressionOperator implements Expression{
 	}
 	public String show(){
 		
-		return "("+this.children.get(0).show()+this.getOperator().getSymbol()+this.children.get(1).show()+")";
+		//return "("+this.children.get(0).show()+this.getOperator().getSymbol()+this.children.get(1).show()+")";
+		return "("+this.children.get(0).show()+"+"+this.children.get(1).show()+")";
 	}
 
 	@Override
@@ -42,5 +43,24 @@ public class ExpressionOperator implements Expression{
 	{
 		return this.children;
 	}
+
+	@Override
+	public char getName() {
+		// TODO Auto-generated method stub
+		return (Character) null;
+	}
+
+	@Override
+	public void setChildren(List<Expression> childs) {
+		// TODO Auto-generated method stub
+		this.children=childs;
+	}
+
+	@Override
+	public Expression copy() {
+		return new ExpressionOperator(this.children);
+	}
+
+
 	
 }
