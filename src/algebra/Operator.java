@@ -40,6 +40,11 @@ public class Operator{
 		this.numberOfEntries = entries.size();
 		this.forbiddenValues = forbiddenValues;
 	}
+	
+	public Operator(String symbol)
+	{
+		this.symbol=symbol;
+	}
 
 	public String getSymbol() {
 		return symbol;

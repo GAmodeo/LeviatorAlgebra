@@ -8,8 +8,9 @@ public class ExpressionOperator implements Expression{
 	
 	List<Expression> children;
 	
-	public ExpressionOperator(List<Expression> b){
+	public ExpressionOperator(List<Expression> b,Operator operator){
 		this.children=b;
+		this.operator=operator;
 	}
 
 	/*
@@ -29,8 +30,8 @@ public class ExpressionOperator implements Expression{
 	}
 	public String show(){
 		
-		//return "("+this.children.get(0).show()+this.getOperator().getSymbol()+this.children.get(1).show()+")";
-		return "("+this.children.get(0).show()+"+"+this.children.get(1).show()+")";
+		return "("+this.children.get(0).show()+this.getOperator().getSymbol()+this.children.get(1).show()+")";
+		//return "("+this.children.get(0).show()+"+"+this.children.get(1).show()+")";
 	}
 
 	@Override
@@ -58,7 +59,7 @@ public class ExpressionOperator implements Expression{
 
 	@Override
 	public Expression copy() {
-		return new ExpressionOperator(this.children);
+		return new ExpressionOperator(this.children,this.operator);
 	}
 
 
