@@ -133,4 +133,13 @@ public class Operator{
 	public void setForbiddenValues(HashMap<String, String> forbiddenValues) {
 		this.forbiddenValues = forbiddenValues;
 	}
+	public void addRule(Rule rule){
+		if(this.rules==null)
+			this.rules=new Vector<Rule>();
+		this.rules.addElement(rule);
+	}
+	public Vector<Rule> getRules()
+	{
+		return this.rules;
+	}
 }

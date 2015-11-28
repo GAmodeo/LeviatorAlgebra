@@ -25,7 +25,10 @@ public class CalculusRuleManipulator {
 		
 		check=this.compareExpressions(pattern,arbre,ht);
 		if(check == false)
+		{
+
 			return null;
+		}
 		
 		
 		String c=arbre.getType().substring(18);
@@ -69,14 +72,15 @@ public class CalculusRuleManipulator {
 	//On regarde si l'exp correnspond au shema d'une regle de calcul : un exp operator et des fils de type entier
 	private boolean compareExpressions(Expression pattern,Expression arbre,Hashtable<String, Integer> ht)
 	{
+
 		// ON VEUT UN EXPRESSION OPERATOR ET UN A DEUX ENFANTS SELON QU'IL SOIT UNAIRE OU BINAIRE
 		if(!pattern.getType().contains("expressionoperator") || !arbre.getType().contains("expressionoperator")){
 			return false;
 		}
-		
-		if(pattern.getType() != arbre.getType())
+
+		if(!pattern.getType().equals(arbre.getType()))
 			return false;
-		
+
 		int nbChildrenPattern=pattern.getChildren().size();
 		if (nbChildrenPattern!=arbre.getChildren().size())
 			return false;

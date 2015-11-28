@@ -18,5 +18,6 @@ public interface  Expression {
 	public abstract List<Expression> getChildren();
 	public void setChildren(List<Expression> Children);
 	public Expression copy();
+	public Operator getOperator();
 	
 }

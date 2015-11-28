@@ -1,6 +1,6 @@
 package algebra;
 
-import com.sun.org.apache.xpath.internal.operations.String;
+import java.lang.*;
 
 public class Rule {
 	
@@ -9,14 +9,19 @@ public class Rule {
 	// lors de la creation de la regle on lui envoie la string qui correspond a l'operateur en java
 	private String javaOperator;
 	
-	public Rule(Expression left){
-		this.left=left;
-	}
+
 	public Rule(Expression left,Expression right){
 		this.left=left;
 		this.right=right;
 	}
 	
+	public Rule(Expression left,String JavaOperator){
+		this.left=left;
+		this.javaOperator=JavaOperator;
+	}
+	
+
+
 	public Expression getLeft() {
 		return this.left;
 	}

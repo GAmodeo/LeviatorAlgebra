@@ -23,7 +23,7 @@ public class Variable implements Expression{
 	}
 	public String show(){
 		
-		return Integer.toString(this.value);
+		return Character.toString(this.name);
 	}
 	@Override
 	public String getType() {
@@ -51,5 +51,11 @@ public class Variable implements Expression{
 	@Override
 	public Expression copy() {
 		return new Variable(this.name,this.value);
+	}
+
+	@Override
+	public Operator getOperator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -43,5 +43,10 @@ public class Entier implements Expression {
 	public Expression copy() {
 		return new Entier(this.value);
 	}
+	@Override
+	public Operator getOperator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

@@ -67,7 +67,6 @@ public class RuleManipulator {
 		boolean check;
 		int i;
 		if(!pattern.getType().equals(arbre.getType())){
-			System.out.println("check echoue car operateurs different");
 			return false;
 		}
 		//si c'est une variable
