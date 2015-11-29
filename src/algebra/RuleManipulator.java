@@ -66,6 +66,7 @@ public class RuleManipulator {
 	{
 		boolean check;
 		int i;
+
 		if(!pattern.getType().equals(arbre.getType())){
 			return false;
 		}

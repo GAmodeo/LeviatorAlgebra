@@ -16,6 +16,10 @@ public class Interpretor {
 		this.mainTree=mainTree;
 	}
 	
+	public String getMainTree()
+	{
+		return this.mainTree.show();
+	}
 	public void setMainTree(String treeString)
 	{
 		
@@ -24,12 +28,20 @@ public class Interpretor {
 	//il  a appuye sur un operateur, on voit si une regle s'applique, le resultat doit etre en string
 	public String testOperator(String position)
 	{
+		String sonPosition=new String();
+		
+		
+		Expression father=TM.getTreeAt(position.substring(0, position.length()-1), mainTree);
+		sonPosition=position.substring(position.length()-1,position.length());
+		
+		
 		Expression tree=TM.getTreeAt(position,mainTree);
-		System.out.println(tree.show());
+
 		
 		if(!tree.getType().contains("expressionoperator"))
 			return null;
 		
+
 		Operator op=tree.getOperator();
 		Vector<Rule> rules=op.getRules();
 		
@@ -38,20 +50,28 @@ public class Interpretor {
 		{
 			//on utilise un rule manipulator
 			if(rules.get(i).getJavaOperator()==null)
-				tree=RM.check(rules.get(i), tree);			
+			{
+				if(RM.check(rules.get(i), tree)!=null)
+				tree=RM.check(rules.get(i), tree);	
+			}
 			else
 			{
-
+				if(CRM.check(rules.get(i), tree)!=null)
 				tree=CRM.check(rules.get(i), tree);
 			}
 			
 		}
 		if(tree == null)
 			return "pas de remplacement";
-		return tree.show();
+		
+		System.out.println("FATHER"+father.show());
+		List<Expression> fathersSons=father.getChildren();
+		fathersSons.set(Integer.parseInt(sonPosition),tree);
+		
+		return mainTree.show();
 	}
 	//pour le test
-	public String replace(String position)
+	public void replace(String position)
 	{
 		
 		

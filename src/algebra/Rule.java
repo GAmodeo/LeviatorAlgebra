@@ -13,6 +13,7 @@ public class Rule {
 	public Rule(Expression left,Expression right){
 		this.left=left;
 		this.right=right;
+		this.javaOperator=null;
 	}
 	
 	public Rule(Expression left,String JavaOperator){

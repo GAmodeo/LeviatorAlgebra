@@ -97,8 +97,9 @@ public class Main2 {
 	
 		Rule rule=new Rule(gauche,droite);
 		Rule rule2=new Rule(gauche2,"+");
-		fois.addRule(rule);
 		plus.addRule(rule2);
+		plus.addRule(rule);
+
 
 		// les arbres gauche et droite qui contiennent deux variable	
 		RuleManipulator RM=new RuleManipulator();
@@ -112,9 +113,11 @@ public class Main2 {
 		Interpretor interpretor=new Interpretor(tree);
 		System.out.println("avant"+tree.show());
 		
+		//System.out.println("TEST OPERATOR  "+interpretor.testOperator("00"));
+		System.out.println("TEST OPERATOR  "+interpretor.testOperator("01"));
 		System.out.println("TEST OPERATOR  "+interpretor.testOperator("00"));
 
-		
+		System.out.println("a la fin : "+interpretor.getMainTree());
 	}
 
 }
