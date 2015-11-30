@@ -21,9 +21,11 @@ public class Variable implements Expression{
 	public int calculateValue(){
 		return this.value;
 	}
-	public String show(){
+	public List<String> show(List<String> list,String actualPosition){
 		
-		return Character.toString(this.name);
+		list.add(Character.toString(this.name));
+		list.add(actualPosition);
+		return list;
 	}
 	@Override
 	public String getType() {
@@ -57,5 +59,16 @@ public class Variable implements Expression{
 	public Operator getOperator() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public String simpleShow() {
+		return Character.toString(name);
+	}
+
+	@Override
+	public void addChild(Expression son) {
+		// TODO Auto-generated method stub
+		
 	}
 }

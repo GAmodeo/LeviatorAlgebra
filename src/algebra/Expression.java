@@ -14,10 +14,12 @@ public interface  Expression {
 	public String getType();
 	public char getName();
 	public abstract int calculateValue();
-	public abstract String show();
+	public abstract String simpleShow();
+	public abstract List<String> show(List<String> list,String actualPosition);
 	public abstract List<Expression> getChildren();
 	public void setChildren(List<Expression> Children);
 	public Expression copy();
 	public Operator getOperator();
+	public void addChild(Expression son);
 	
 }

@@ -35,9 +35,9 @@ public class Parser {
 		    	identifyLine(line);
 		    }
 		}
-		operator = new Operator(symbol,commutativity,associativity,priority,
+		operator = new Operator(symbol,logoPath, commutativity,associativity,priority,
 								distributivity,neutralValue,absorbValue,
-								returnType,entries,forbibValue);
+								returnType,entries,forbibValue, absorbValue);
 		return new Page(symbol,file.getName(),file.lastModified(),operator);
 	}
 	

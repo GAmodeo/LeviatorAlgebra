@@ -31,14 +31,14 @@ public class CalculusRuleManipulator {
 		}
 		
 		
-		String c=arbre.getType().substring(18);
+		String c=rule.getJavaOperator();
 
 		Expression retour=replace(c,ht);
 
 		return retour;
 	}
 	int operationBinaire(int a,int b,String operator)
-	{				
+	{		
 		switch(operator){
 		case "+" :	return a+b;
 		case "*" :	return a*b;

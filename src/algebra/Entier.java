@@ -20,8 +20,10 @@ public class Entier implements Expression {
 	}
 
 	@Override
-	public String show() {
-		return Integer.toString(this.value);
+	public List<String> show(List<String> list,String actualPosition) {
+		list.add(Integer.toString(this.value));
+		list.add(actualPosition);
+		return list;
 	}
 	@Override
 	public List<Expression> getChildren() {
@@ -47,6 +49,15 @@ public class Entier implements Expression {
 	public Operator getOperator() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	@Override
+	public String simpleShow() {
+		return Integer.toString(this.value);
+	}
+	@Override
+	public void addChild(Expression son) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
