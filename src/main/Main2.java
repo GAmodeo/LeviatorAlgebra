@@ -30,15 +30,73 @@ public class Main2 {
 		interpretor.setMainTree();
 		
 		List<String> list=interpretor.getMainTree();
-		
 		for(int i=0;i<list.size();i++)
 			System.out.print(" "+list.get(i)+" ");
 		System.out.println("    fini....");
+		if(interpretor.isFinished())System.out.println("VRAIMENT FINI");
 		
 		list=interpretor.onSimpleClickCheck("01");
 		for(int i=0;i<list.size();i++)
 			System.out.print(" "+list.get(i)+" ");
 		System.out.println("    fini....");
+		if(interpretor.isFinished())System.out.println("VRAIMENT FINI");
+		
+		interpretor.onSimpleClickReplace("01",0);
+		list=interpretor.getMainTree();
+		for(int i=0;i<list.size();i++)
+			System.out.print(" "+list.get(i)+" ");
+		System.out.println("    fini....");
+		if(interpretor.isFinished())System.out.println("VRAIMENT FINI");
+		
+		interpretor.onSimpleClickReplace("00",0);
+		list=interpretor.getMainTree();
+		for(int i=0;i<list.size();i++)
+			System.out.print(" "+list.get(i)+" ");
+		System.out.println("    fini....");
+		if(interpretor.isFinished())System.out.println("VRAIMENT FINI");
+		
+		interpretor.onSimpleClickReplace("0",0);
+		list=interpretor.getMainTree();
+		for(int i=0;i<list.size();i++)
+			System.out.print(" "+list.get(i)+" ");
+		System.out.println("    fini....");
+		if(interpretor.isFinished())System.out.println("VRAIMENT FINI");
+		
+
+		interpretor.onDoubleClick("00","div","4");
+		list=interpretor.getMainTree();
+		for(int i=0;i<list.size();i++)
+			System.out.print(" "+list.get(i)+" ");
+		System.out.println("    fini....");
+		if(interpretor.isFinished())System.out.println("VRAIMENT FINI");
+		
+		interpretor.onSimpleClickReplace("00",0);
+		list=interpretor.getMainTree();
+		for(int i=0;i<list.size();i++)
+			System.out.print(" "+list.get(i)+" ");
+		System.out.println("    fini....");
+		if(interpretor.isFinished())System.out.println("VRAIMENT FINI");
+		
+		interpretor.onDoubleClick("1","div","4");
+		list=interpretor.getMainTree();
+		for(int i=0;i<list.size();i++)
+			System.out.print(" "+list.get(i)+" ");
+		System.out.println("    fini....");
+		if(interpretor.isFinished())System.out.println("VRAIMENT FINI");
+		
+		interpretor.onSimpleClickReplace("1",0);
+		list=interpretor.getMainTree();
+		for(int i=0;i<list.size();i++)
+			System.out.print(" "+list.get(i)+" ");
+		System.out.println("    fini....");
+		if(interpretor.isFinished())System.out.println("VRAIMENT FINI");
+		
+		interpretor.onSimpleClickReplace("0",0);
+		list=interpretor.getMainTree();
+		for(int i=0;i<list.size();i++)
+			System.out.print(" "+list.get(i)+" ");
+		System.out.println("    fini....");
+		if(interpretor.isFinished())System.out.println("VRAIMENT FINI");
 		
 		//System.out.println("TEST OPERATOR  "+interpretor.testOperator("00"));
 		/*System.out.println("TEST OPERATOR  "+interpretor.testOperator("01"));
